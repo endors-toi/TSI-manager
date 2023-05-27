@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Estudiante;
 
-class EstudianteController extends Controller
+class AdminController extends Controller
 {
     public function index()
     {
-        return view('estudiante.index');
+        return view('admin.index');
     }
 
     public function create()
@@ -36,6 +35,7 @@ class EstudianteController extends Controller
     {
         // Acción "update"
     }
+
 
     public function destroy($id)
     {

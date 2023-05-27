@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'index'])->name('home.index');
 Route::get('/login',[HomeController::class,'login'])->name('home.login');
+
+Route::get('/estudiante',[EstudianteController::class,'index'])->name('estudiante.index');
+
+Route::get('/profesor',[ProfesorController::class,'index'])->name('profesor.index');
+
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+
