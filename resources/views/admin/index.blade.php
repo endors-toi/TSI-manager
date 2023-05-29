@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-custom.min.css') }}">
-    <title>Admin Panel</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+@extends('templates.master')
+
+@section('title') Admin @endsection
+
+@section('contenido-principal')
+<div class="row mt-2">
+    <div class="col">
+        <h3>Panel del Admin</h3>
     </div>
-</body>
-</html>
+</div>
+@endsection

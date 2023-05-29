@@ -1,63 +1,14 @@
 @extends('templates.master')
 
+@section('title') Home @endsection
+
 @section('contenido-principal')
 <div class="row mt-2">
-    <div class="col">
-        <h3>Taller de Sistemas de la Informacion</h3>
-    </div>
-</div>
-
-<div class="row">
-    <!-- equipos -->
-    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-3">
-        <div class="card">
-            <img src="" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Estudiantes</h5>
-                <div class="btn-group d-flex justify-content-center">
-                    <button class="btn btn-outline-success"><a href="#">Ver</a></button>
-                    <button class="btn btn-outline-success"><a href="#">Agregar</a></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- estadios -->
-    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-3">
-        <div class="card">
-            <img src="#" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Profesores</h5>
-                <div class="btn-group d-flex justify-content-center">
-                    <button class="btn btn-outline-success">Ver</button>
-                    <button class="btn btn-outline-success">Agregar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- estadísticas -->
-    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-3">
-        <div class="card">
-            <img src="#" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Propuestas</h5>
-                <div class="btn-group d-flex justify-content-center">
-                    <button class="btn btn-outline-success">Ver</button>
-                    <button class="btn btn-outline-success">Agregar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- configuración -->
-    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-3">
-        <div class="card">
-            <img src="" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Configuración</h5>
-                <div class="btn-group d-flex justify-content-center">
-                    <button class="btn btn-outline-success">Ver</button>
-                </div>
-            </div>
-        </div>
+    <div class="col my-5">
+        <h4>¡Bienvenido/a! Elige un perfil para comenzar:</h4>
+        <a href="{{route('estudiante.index')}}">Estudiante</a>
+        <a href="{{route('profesor.index')}}">Profesor</a>
+        <a href="{{route('admin.index')}}">Admin</a>
     </div>
 </div>
 @endsection
