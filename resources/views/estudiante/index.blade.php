@@ -11,11 +11,7 @@
 <div class="row">
     <div class="col">
         <h4>Gestor de Propuestas de Proyecto</h4>
-<<<<<<< HEAD
         <form action="{{ route('estudiante.propuesta.index') }}" method="POST">
-=======
-        <form action="{{ route('estudiante.show') }}" method="POST">
->>>>>>> f8df7ef83abbe91537f8affa15b72319551a4d26
             @csrf
             <h5>Selecciona tu nombre:</h5>
             <select name="estudiante_rut" id="estudiante_rut" class="form-select">
