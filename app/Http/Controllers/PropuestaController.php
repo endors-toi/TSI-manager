@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Propuesta;
+use App\Models\Estudiante;
 
 class PropuestaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Acción "index"
+        $rut = $request->input('estudiante_rut');
+        $estudiante = Estudiante::find($rut);
+        $propuestas = Propuesta::where('estudiante_rut', $rut)->get();
+        return view('estudiante.propuesta.index', compact('estudiante', 'propuestas'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        // Acción "create"
+
+        return view('estudiante.propuesta.create', compact('estudiante'));
     }
 
     public function edit($id)
@@ -29,7 +34,8 @@ class PropuestaController extends Controller
 
     public function store(Request $request)
     {
-        // Acción "store"
+        $path = $request->file('propuesta')->store('propuestas');
+        return $path;
     }
 
     public function update(Request $request, $id)

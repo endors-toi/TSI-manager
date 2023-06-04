@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\PropuestaController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\AdminController;
 
@@ -20,7 +21,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/',[HomeController::class,'index'])->name('home.index');
 
 Route::get('/estudiante',[EstudianteController::class,'index'])->name('estudiante.index');
-Route::get('/estudiante/show',[EstudianteController::class,'show'])->name('estudiante.show');
+Route::post('/estudiante/propuesta/', [PropuestaController::class, 'index'])->name('estudiante.propuesta.index');
+Route::get('/estudiante/propuesta/show', [PropuestaController::class, 'show'])->name('estudiante.propuesta.show');
+Route::post('/estudiante/propuesta/create', [PropuestaController::class, 'create'])->name('estudiante.propuesta.create');
+Route::post('/estudiante/propuesta/store', [PropuestaController::class, 'store'])->name('estudiante.propuesta.store');
+Route::get('/estudiante/propuesta/edit', [PropuestaController::class, 'edit'])->name('estudiante.propuesta.edit');
+Route::delete('/estudiante/propuesta/destroy', [PropuestaController::class, 'destroy'])->name('estudiante.propuesta.destroy');
 
 Route::get('/profesor',[ProfesorController::class,'index'])->name('profesor.index');
 

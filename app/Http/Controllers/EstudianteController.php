@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
-use App\Models\Propuesta;
 
 class EstudianteController extends Controller
 {
@@ -26,10 +25,7 @@ class EstudianteController extends Controller
 
     public function show(Request $request)
     {
-        $rut = $request->input('estudiante_rut');
-        $estudiante = Estudiante::find($rut);
-        $propuestas = Propuesta::where('estudiante_rut', $rut)->get();
-        return view('estudiante.show', compact('estudiante', 'propuestas'));
+        // Acción "show"
     }
 
     public function store(Request $request)
