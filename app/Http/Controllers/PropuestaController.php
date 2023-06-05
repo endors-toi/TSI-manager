@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Propuesta;
 use App\Models\Estudiante;
+use Illuminate\Support\Facades\Storage;
 
 class PropuestaController extends Controller
 {
@@ -26,16 +27,23 @@ class PropuestaController extends Controller
         // Acción "edit"
     }
 
-    public function show($id)
+    public function show(Propuesta $propuesta)
     {
-        // Acción "show"
+        return view('propuestas.show', compact('propuesta'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Estudiante $estudiante)
     {
-        $path = $request->file('propuesta')->store('propuestas');
-        return $path;
+        $path = Storage::disk('local')->put('propuesta.pdf', file('propuesta'));
+
+        $propuesta = new Propuesta;
+        $propuesta->estudiante_rut = $estudiante->rut;
+        $propuesta->documento = $path;
+        $propuesta->save();
+
+        return redirect()->route('propuestas.index');
     }
+
 
     public function update(Request $request, $id)
     {

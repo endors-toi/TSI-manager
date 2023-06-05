@@ -5,9 +5,11 @@
 @section('contenido-principal')
 <div class="row">
     <div class="col mt-2">
-        <form action="{{route('propuestas.store')}}">
-            <label for="formFileLg" class="form-label">Sube tu propuesta en formato PDF:</label>
-            <input class="form-control form-control-lg" id="formFileLg" type="file">
+        <form action="{{route('propuestas.store')}}" method="POST">
+            @csrf
+            @method('PUT')
+            <label for="propuesta" class="form-label">Sube tu propuesta en formato PDF:</label>
+            <input class="form-control form-control-lg" id="propuesta" name="propuesta" type="file">
             <button class="btn btn-primary mt-3">Subir</button>
         </form>
     </div>
