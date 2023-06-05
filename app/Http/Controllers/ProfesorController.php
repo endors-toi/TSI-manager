@@ -8,7 +8,7 @@ class ProfesorController extends Controller
 {
     public function index()
     {
-        return view('profesor.index');
+        return view('profesores.index');
     }
 
     public function create()

@@ -35,7 +35,7 @@
 </div>
 <div class="row mt-2">
     <div class="col">
-        <form action="{{route('estudiante.propuesta.create')}}" method="POST">
+        <form action="{{route('propuestas.create')}}" method="POST">
             @csrf
             <button class="btn btn-secondary" type="submit">Agregar Propuesta</button>
         </form>

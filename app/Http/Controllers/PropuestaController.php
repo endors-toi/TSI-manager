@@ -13,13 +13,12 @@ class PropuestaController extends Controller
         $rut = $request->input('estudiante_rut');
         $estudiante = Estudiante::find($rut);
         $propuestas = Propuesta::where('estudiante_rut', $rut)->get();
-        return view('estudiante.propuesta.index', compact('estudiante', 'propuestas'));
+        return view('propuestas.index', compact('estudiante', 'propuestas'));
     }
 
-    public function create(Request $request)
+    public function create(Estudiante $estudiante)
     {
-
-        return view('estudiante.propuesta.create', compact('estudiante'));
+        return view('propuestas.create', compact('estudiante'));
     }
 
     public function edit($id)

@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('estudiante.index')}}">Estudiante</a>
+                        <a class="nav-link" href="{{route('estudiantes.index')}}">Estudiante</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('profesor.index')}}">Profesor</a>
+                        <a class="nav-link" href="{{route('profesores.index')}}">Profesor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.index')}}">Admin</a>
+                        <a class="nav-link" href="{{route('admins.index')}}">Admin</a>
                     </li>
                 </ul>
             </div>

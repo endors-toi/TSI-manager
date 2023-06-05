@@ -20,14 +20,15 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/',[HomeController::class,'index'])->name('home.index');
 
-Route::get('/estudiante',[EstudianteController::class,'index'])->name('estudiante.index');
-Route::post('/estudiante/propuesta/', [PropuestaController::class, 'index'])->name('estudiante.propuesta.index');
-Route::get('/estudiante/propuesta/show', [PropuestaController::class, 'show'])->name('estudiante.propuesta.show');
-Route::post('/estudiante/propuesta/create', [PropuestaController::class, 'create'])->name('estudiante.propuesta.create');
-Route::post('/estudiante/propuesta/store', [PropuestaController::class, 'store'])->name('estudiante.propuesta.store');
-Route::get('/estudiante/propuesta/edit', [PropuestaController::class, 'edit'])->name('estudiante.propuesta.edit');
-Route::delete('/estudiante/propuesta/destroy', [PropuestaController::class, 'destroy'])->name('estudiante.propuesta.destroy');
+Route::get('/estudiantes', [EstudianteController::class, 'index'])->name('estudiantes.index');
 
-Route::get('/profesor',[ProfesorController::class,'index'])->name('profesor.index');
+Route::post('/propuestas', [PropuestaController::class, 'index'])->name('propuestas.index');
+Route::get('/propuestas/{propuesta}', [PropuestaController::class, 'show'])->name('propuestas.show');
+Route::post('/propuestas/create', [PropuestaController::class, 'create'])->name('propuestas.create');
+Route::post('/propuestas/store', [PropuestaController::class, 'store'])->name('propuestas.store');
+Route::get('/propuestas/{propuesta}/edit', [PropuestaController::class, 'edit'])->name('propuestas.edit');
+Route::delete('/propuestas/{propuesta}', [PropuestaController::class, 'destroy'])->name('propuestas.destroy');
 
-Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+Route::get('/profesores', [ProfesorController::class, 'index'])->name('profesores.index');
+
+Route::get('/admins',[AdminController::class,'index'])->name('admins.index');
