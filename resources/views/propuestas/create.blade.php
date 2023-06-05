@@ -5,7 +5,7 @@
 @section('contenido-principal')
 <div class="row">
     <div class="col mt-2">
-        <form action="{{route('propuestas.store')}}" method="POST">
+        <form action="{{route('propuestas.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <label for="propuesta" class="form-label">Sube tu propuesta en formato PDF:</label>

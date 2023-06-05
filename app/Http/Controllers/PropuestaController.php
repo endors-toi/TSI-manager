@@ -34,7 +34,7 @@ class PropuestaController extends Controller
 
     public function store(Request $request, Estudiante $estudiante)
     {
-        $path = Storage::disk('local')->put('propuesta.pdf', file('propuesta'));
+        $path = Storage::disk('local')->put('propuesta.pdf', $request->file('propuesta'));
 
         $propuesta = new Propuesta;
         $propuesta->estudiante_rut = $estudiante->rut;
