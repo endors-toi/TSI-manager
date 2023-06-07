@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('propuestas', function (Blueprint $table) {
             //CAMPOS
-            $table->integer('id')->primary();
-            $table->date('fecha');
+            $table->increments('id');
+            $table->date('fecha')->default(now());
             $table->string('documento',100);
-            $table->tinyInteger('estado');
-            $table->string('posicion',10);
+            $table->tinyInteger('estado')->default(0);
 
             //FK
             $table->string('estudiante_rut');

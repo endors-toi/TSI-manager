@@ -24,7 +24,7 @@ Route::get('/estudiantes', [EstudianteController::class, 'index'])->name('estudi
 
 Route::post('/propuestas', [PropuestaController::class, 'index'])->name('propuestas.index');
 Route::get('/propuestas/{propuesta}', [PropuestaController::class, 'show'])->name('propuestas.show');
-Route::post('/propuestas/create', [PropuestaController::class, 'create'])->name('propuestas.create');
+Route::post('/propuestas/create/{rutEstudiante}', [PropuestaController::class, 'create'])->name('propuestas.create');
 Route::put('/propuestas/store', [PropuestaController::class, 'store'])->name('propuestas.store');
 Route::get('/propuestas/{propuesta}/edit', [PropuestaController::class, 'edit'])->name('propuestas.edit');
 Route::delete('/propuestas/{propuesta}', [PropuestaController::class, 'destroy'])->name('propuestas.destroy');

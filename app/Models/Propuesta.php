@@ -15,6 +15,8 @@ class Propuesta extends Model
     protected $keyType = 'integer';
     public $incrementing = true;
 
+    public $timestamps = false;
+
     public function estudiantes():BelongsTo{
         return $this->belongsTo(Estudiante::class);
     }

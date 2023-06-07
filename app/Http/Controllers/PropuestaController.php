@@ -17,9 +17,9 @@ class PropuestaController extends Controller
         return view('propuestas.index', compact('estudiante', 'propuestas'));
     }
 
-    public function create(Estudiante $estudiante)
+    public function create($rutEstudiante)
     {
-        return view('propuestas.create', compact('estudiante'));
+        return view('propuestas.create', compact('rutEstudiante'));
     }
 
     public function edit($id)
@@ -32,13 +32,18 @@ class PropuestaController extends Controller
         return view('propuestas.show', compact('propuesta'));
     }
 
-    public function store(Request $request, Estudiante $estudiante)
+    public function store(Request $request)
     {
-        $path = Storage::disk('local')->put('propuesta.pdf', $request->file('propuesta'));
+        $archivo = $request->file('propuesta');
+        $rutEstudiante = $request->input('rutEstudiante');
+
+        $pathCarpeta = 'propuestas/' . $rutEstudiante;
+        $nombreArchivo = $archivo->getClientOriginalName();
+        $pathArchivo = $archivo->storeAs($pathCarpeta, $nombreArchivo, 'local');
 
         $propuesta = new Propuesta;
-        $propuesta->estudiante_rut = $estudiante->rut;
-        $propuesta->documento = $path;
+        $propuesta->estudiante_rut = $rutEstudiante;
+        $propuesta->documento = $pathArchivo;
         $propuesta->save();
 
         return redirect()->route('propuestas.index');

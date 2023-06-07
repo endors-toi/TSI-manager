@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profesor_propuestas', function (Blueprint $table) {
-            //CAMPOS
+            //PRIMARY KEYS
             $table->string('propuesta_id');
             $table->string('profesor_rut');
             $table->primary(['propuesta_id', 'profesor_rut']);
+
+            //OTROS CAMPOS
             $table->date('fecha');
             $table->time('hora');
             $table->text('comentario');
