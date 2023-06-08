@@ -5,11 +5,6 @@
 @section('contenido-principal')
 <div class="row mt-2">
     <div class="col">
-        <h3>Taller de Sistemas de la Informacion</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
         <h4>Gestor de Propuestas de Proyecto</h4>
         <form action="{{route('propuestas.index')}}" method="POST">
             @csrf

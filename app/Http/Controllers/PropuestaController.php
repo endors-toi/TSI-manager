@@ -46,7 +46,7 @@ class PropuestaController extends Controller
         $propuesta->documento = $pathArchivo;
         $propuesta->save();
 
-        return redirect()->route('propuestas.index');
+        return redirect()->route('estudiantes.index');
     }
 
 

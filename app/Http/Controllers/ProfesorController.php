@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Propuesta;
+use App\Models\Estudiante;
 
 class ProfesorController extends Controller
 {
     public function index()
     {
-        return view('profesores.index');
+        $estudiantes = Estudiante::all();
+        $propuestas = Propuesta::all();
+        return view('profesores.index', compact('propuestas','estudiantes'));
     }
 
     public function create()
